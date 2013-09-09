@@ -100,6 +100,7 @@ inoremap <buffer><expr> <LocalLeader>B tex_nine#InsertSnippet()
 imap <buffer><expr> <LocalLeader>E tex_nine#SmartInsert('\eqref{')
 imap <buffer><expr> <LocalLeader>R tex_nine#SmartInsert('\ref{')
 imap <buffer><expr> <LocalLeader>C tex_nine#SmartInsert('\cite{', '\[cC]ite')
+imap <buffer><expr> <LocalLeader>A tex_nine#SmartInsert('\autocite{', '\[Aa]utocite')
 
 " SyncTeX
 if b:tex_nine_config.synctex

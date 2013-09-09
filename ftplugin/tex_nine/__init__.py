@@ -282,7 +282,7 @@ class TeXNineBibTeX(TeXNineBase):
                 e = messages['MASTER_NOT_ACTIVE'].format(path.basename(master))
                 raise TeXNineError(e)
             else:
-                match = re.search(r'\\bibliography{([^}]+)}',
+                match = re.search(r'\\(?:addbibresource|bibliography){([^}]+)}',
                                   masterbuffer)
                 if not match:
                     e = messages['NO_BIBTEX']
@@ -292,7 +292,8 @@ class TeXNineBibTeX(TeXNineBase):
                 dirname = path.dirname(master)
                 # Find the absolute paths of the bibfiles
                 for b in bibfiles:
-                    b += '.bib'
+                    if not b.endswith('.bib'):
+                        b += '.bib'
                     # Check if the bibfile is in the compilation folder
                     bibtemp = path.join(dirname, b)
                     b = ( bibtemp if path.exists(bibtemp) else b )
@@ -462,7 +463,7 @@ class TeXNineOmni(TeXNineBibTeX):
         try:
             # Select completion based on keyword
             if self.keyword is not None:
-                # Natbib has \Cite.* type of of commands
+                # Natbib and biblatex have \Cite.* type of of commands
                 if 'cite' in self.keyword or 'Cite' in self.keyword: 
                     compl = self.bibentries
                 elif 'ref' in self.keyword:

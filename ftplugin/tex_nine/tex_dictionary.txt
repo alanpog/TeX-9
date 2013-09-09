@@ -28,6 +28,9 @@ arrayrulewidth
 arraystretch
 article
 author
+autocite
+autocite*
+autocites
 b5paper
 backmatter
 baselineskip
@@ -85,6 +88,8 @@ chapterbib
 chaptername
 check
 cite
+cite*
+cites
 cleardoublepage
 clearpage
 cline
@@ -172,6 +177,9 @@ fn2end
 fnpara
 fnsymbol
 fontenc
+footcite
+footcite*
+footcites
 footheight
 footmisc
 footnote
@@ -400,6 +408,9 @@ pagestyle
 paperheight
 paperwidth
 paragraph
+parencite
+parencite*
+parencites
 parbox
 parindent
 parsep

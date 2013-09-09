@@ -176,8 +176,10 @@
 
     Type <LocalLeader>C to insert a citation, i.e. `\cite{citekey}'. You're
     prompted with a popup list of completions if the \bibliography{} statement
-    contains a valid BibTeX file (see |tex_nine-bibtex| for details). Inserting
-    references, `\ref{ref}', works in a similar way. The corresponding mapping is
+    (or \addbibresource{}, if you are using biblatex) contains a valid BibTeX
+    file (see |tex_nine-bibtex| for details). <LocalLeader>A inserts the
+    biblatex `\autocite{citekey}` command instead. Inserting references,
+    `\ref{ref}', works in a similar way. The corresponding mapping is
     <LocalLeader>R.
 
     To insert an environment, press <LocalLeader>B. You're prompted for an
@@ -296,8 +298,9 @@
 5.  BibTeX                                          *tex_nine-bibtex*
 
     When adding entries in BibTeX databases or appending new databases in the
-    \bibliography{} statement, you need tell TeX-9 to update its citekey
-    database. This is accomplished by typing <LocalLeader>U in normal mode.
+    \bibliography{} (or, if using biblatex, \addbibresource{}) statement, you
+    need tell TeX-9 to update its citekey database. This is accomplished by
+    typing <LocalLeader>U in normal mode.
 
     In addition to citekey completion, TeX-9 provides a preview feature
     that makes it easier to work with BibTeX and LaTeX files in the same
@@ -305,7 +308,6 @@
     by pressing `gb' over its citekey, i.e. \cite{citekey}. This command
     is in line with ||gd|| and  |gf| with the exception that the BibTeX
     entry is shown in a  |preview-window||.
-
 
 ==============================================================================
 
